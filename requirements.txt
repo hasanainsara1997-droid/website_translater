@@ -1,1 +1,3 @@
-404: Not Found
+flask
+deep-translator
+gunicorn
