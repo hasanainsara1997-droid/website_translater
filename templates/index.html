@@ -347,6 +347,91 @@ button:hover {
     background: rgba(0, 255, 204, 0.5);
 }
 
+/* ✅ تنسيقات حقوق البرمجة */
+.copyright-section {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, rgba(0, 255, 204, 0.05) 0%, rgba(170, 0, 255, 0.05) 100%);
+    border-top: 1px solid rgba(0, 255, 204, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.copyright-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.developer-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    transition: all 0.3s ease;
+}
+
+.developer-info:hover {
+    background: rgba(0, 255, 204, 0.1);
+    border-color: rgba(0, 255, 204, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 204, 0.2);
+}
+
+.code-icon {
+    font-size: 18px;
+    color: #00ffcc;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+    animation: pulse-code 2s ease-in-out infinite;
+}
+
+@keyframes pulse-code {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+.dev-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.dev-label {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dev-name {
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #00ffcc, #aa00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.5px;
+}
+
+.copyright-divider {
+    width: 1px;
+    height: 30px;
+    background: linear-gradient(180deg, transparent, rgba(0, 255, 204, 0.5), transparent);
+}
+
+.copyright-year {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .buttons {
@@ -369,6 +454,416 @@ button:hover {
     }
     .right {
         border-bottom: none;
+    }
+    
+    .copyright-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .copyright-divider {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(0, 255, 204, 0.5), transparent);
+    }
+    
+    .developer-info {
+        padding: 6px 15px;
+    }
+    
+    .dev-name {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1 data-key="appTitle">🌐 Translator Pro MAX</h1>
+</div>
+
+<!-- ✅ الأزرار مع قائمة اختيار اللغة -->
+<div class="buttons">
+    
+    <!-- ✅ قائمة اختيار لغات الترجمة -->
+    <div class="lang-selector">
+        <label data-key="fromLang">From:</label>
+        <select id="sourceLang" onchange="updateLangDisplay()">
+            <option value="en">🇺🇸 English</option>
+            <option value="ar">🇸🇦 Arabic</option>
+            <option value="fa">🇮🇷 Persian (Farsi)</option>
+            <option value="fr">🇫🇷 French</option>
+            <option value="de">🇩🇪 German</option>
+            <option value="es">🇪🇸 Spanish</option>
+            <option value="tr">🇹🇷 Turkish</option>
+            <option value="ru">🇷🇺 Russian</option>
+            <option value="zh">🇨🇳 Chinese</option>
+            <option value="ja">🇯🇵 Japanese</option>
+            <option value="ko">🇰🇷 Korean</00e676); 
+    color: white; 
+    box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4);
+}
+
+.toggle { 
+    background: linear-gradient(135deg, #aa00ff, #e040fb); 
+    color: white; 
+    box-shadow: 0 4px 15px rgba(170, 0, 255, 0.4);
+}
+
+.lang-switch {
+    background: linear-gradient(135deg, #ff9100, #ffc400);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 145, 0, 0.4);
+}
+
+.swap-btn {
+    background: rgba(0, 255, 204, 0.2);
+    color: #00ffcc;
+    border: 1px solid rgba(0, 255, 204, 0.5);
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.swap-btn:hover {
+    background: rgba(0, 255, 204, 0.4);
+    transform: rotate(180deg);
+}
+
+/* تقسيم الشاشة */
+.container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* يمين ويسار */
+.left, .right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid rgba(51, 51, 51, 0.5);
+    position: relative;
+    background: rgba(30, 30, 30, 0.5);
+}
+
+.right {
+    border-right: none;
+}
+
+/* toolbar */
+.toolbar {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+}
+
+.tool-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.tool-btn:hover {
+    background: rgba(0, 150, 255, 0.3);
+    border-color: rgba(0, 150, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* عداد الكلمات */
+.word-counter {
+    background: rgba(0, 0, 0, 0.4);
+    color: #00ffcc;
+    padding: 8px 15px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', 'Cairo', Tahoma, Arial, sans-serif;
+    gap: 20px;
+}
+
+.counter-number {
+    background: rgba(0, 255, 204, 0.2);
+    color: #00ffcc;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+}
+
+/* مؤشر التحديد */
+.selection-info {
+    background: rgba(0, 176, 255, 0.2);
+    color: #00b0ff;
+    padding: 5px 15px;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 176, 255, 0.3);
+    display: none;
+}
+
+.selection-info.active {
+    display: block;
+}
+
+/* input */
+#input {
+    flex: 1;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 20px;
+    background: rgba(30, 30, 30, 0.8);
+    color: white;
+    font-size: 16px;
+    line-height: 2;
+    font-family: 'Segoe UI', 'Cairo', 'Tahoma', Arial, sans-serif;
+    direction: auto;
+    unicode-bidi: plaintext;
+    resize: none;
+    overflow-y: auto;
+}
+
+#input::placeholder {
+    color: #666;
+    font-style: italic;
+}
+
+/* صندوق الإخراج */
+.box {
+    flex: 1;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 2;
+    background: rgba(26, 26, 26, 0.8);
+    color: white;
+    overflow-y: auto;
+    font-family: 'Segoe UI', 'Cairo', 'Tahoma', Arial, sans-serif;
+    direction: auto;
+    unicode-bidi: plaintext;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    position: relative;
+}
+
+/* التظليل للنص المحدد */
+.highlight-text {
+    background: linear-gradient(135deg, rgba(255, 145, 0, 0.6), rgba(255, 196, 0, 0.6));
+    color: #000;
+    padding: 2px 4px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 145, 0, 0.8);
+    animation: highlight-pulse 1s ease-in-out infinite alternate;
+    font-weight: bold;
+}
+
+@keyframes highlight-pulse {
+    from { box-shadow: 0 0 5px rgba(255, 145, 0, 0.5); }
+    to { box-shadow: 0 0 15px rgba(255, 145, 0, 1); }
+}
+
+/* status */
+#status {
+    color: #aaa;
+    font-size: 13px;
+    padding: 8px 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00ffcc;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* تأثيرات */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #00ffcc;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 204, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 204, 0.5);
+}
+
+/* ✅ تنسيقات حقوق البرمجة */
+.copyright-section {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, rgba(0, 255, 204, 0.05) 0%, rgba(170, 0, 255, 0.05) 100%);
+    border-top: 1px solid rgba(0, 255, 204, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.copyright-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.developer-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    transition: all 0.3s ease;
+}
+
+.developer-info:hover {
+    background: rgba(0, 255, 204, 0.1);
+    border-color: rgba(0, 255, 204, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 204, 0.2);
+}
+
+.code-icon {
+    font-size: 18px;
+    color: #00ffcc;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+    animation: pulse-code 2s ease-in-out infinite;
+}
+
+@keyframes pulse-code {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+.dev-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.dev-label {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dev-name {
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #00ffcc, #aa00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.5px;
+}
+
+.copyright-divider {
+    width: 1px;
+    height: 30px;
+    background: linear-gradient(180deg, transparent, rgba(0, 255, 204, 0.5), transparent);
+}
+
+.copyright-year {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .lang-selector {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .container {
+        flex-direction: column;
+    }
+    .left, .right {
+        width: 100%;
+        height: 50%;
+        border-right: none;
+        border-bottom: 2px solid rgba(51, 51, 51, 0.5);
+    }
+    .right {
+        border-bottom: none;
+    }
+    
+    .copyright-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .copyright-divider {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(0, 255, 204, 0.5), transparent);
+    }
+    
+    .developer-info {
+        padding: 6px 15px;
+    }
+    
+    .dev-name {
+        font-size: 14px;
     }
 }
 </style>
@@ -485,6 +980,21 @@ button:hover {
 
 </div>
 
+</div>
+
+<!-- ✅ حقوق البرمجة -->
+<div class="copyright-section">
+    <div class="copyright-content">
+        <div class="developer-info">
+            <span class="code-icon">&lt;/&gt;</span>
+            <div class="dev-details">
+                <span class="dev-label">Developed by</span>
+                <span class="dev-name">Hasanain Jawad</span>
+            </div>
+        </div>
+        <div class="copyright-divider"></div>
+        <span class="copyright-year">© 2026</span>
+    </div>
 </div>
 
 <script>
